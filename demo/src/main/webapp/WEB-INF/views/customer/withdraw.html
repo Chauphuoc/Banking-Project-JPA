@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <th:block th:replace="/layout/css :: css"/>
+  <title>WITH DRAW</title>
+</head>
+
+<body>
+
+<!-- Begin page -->
+<div id="wrapper">
+
+  <!-- Topbar Start -->
+  <th:block th:replace="/layout/header-board :: header-board"/>
+  <!-- end Topbar -->
+
+  <!-- ========== Left Sidebar Start ========== -->
+  <th:block th:replace="/layout/letfside :: leftside"/>
+  <!-- Left Sidebar End -->
+
+  <!-- ============================================================== -->
+  <!-- Start Page Content here -->
+  <!-- ============================================================== -->
+
+  <div class="content-page">
+    <div class="content">
+
+      <!-- Start Content write here-->
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="header-title">DEPOSIT</h4>
+              <div>
+                <th:block th:if="${message}">
+                  <p style="color: green" th:text="${message}"></p>
+                </th:block>
+              </div>
+              <form method="post" th:action="@{/withdraw-customer}" >
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputPassword4" class="col-form-label">ID</label>
+                    <input type="number" class="form-control" th:name="idCustomer"   id="inputPassword4">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputAddress" class="col-form-label">Quantity</label>
+                    <input type="number" class="form-control" th:name="quantity"  id="inputAddress" >
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck11">
+                    <label class="custom-control-label" for="customCheck11">Check this custom checkbox</label>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary waves-effect waves-light">Deposit</button>
+                <button class="btn btn-primary waves-effect waves-light" style="margin-left: 15px;background-color: #3c763d">
+                  <a th:href="@{/}" style="color: white">Back</a></button>
+              </form>
+
+            </div> <!-- end card-body -->
+          </div> <!-- end card-->
+        </div> <!-- end col -->
+      </div>
+      <!-- container -->
+
+    </div> <!-- content -->
+
+    <!-- Footer Start -->
+    <th:block th:replace="/layout/footer :: footer"/>
+    <!-- end Footer -->
+
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- End Page content -->
+  <!-- ============================================================== -->
+
+
+</div>
+<!-- END wrapper -->
+
+<!-- Right Sidebar -->
+<!-- /Right-bar -->
+
+<!-- Right bar overlay-->
+
+<th:block th:replace="/layout/script :: script"/>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <th:block th:replace="/layout/css :: css"/>
+</head>
+
+<body>
+
+<!-- Begin page -->
+<div id="wrapper">
+
+  <!-- Topbar Start -->
+  <th:block th:replace="/layout/header-board :: header-board"/>
+  <!-- end Topbar -->
+
+  <!-- ========== Left Sidebar Start ========== -->
+  <th:block th:replace="/layout/letfside :: leftside"/>
+  <!-- Left Sidebar End -->
+
+  <!-- ============================================================== -->
+  <!-- Start Page Content here -->
+  <!-- ============================================================== -->
+
+  <div class="content-page">
+    <div class="content">
+
+      <!-- Start Content write here-->
+       <!-- container -->
+
+    </div> <!-- content -->
+
+    <!-- Footer Start -->
+    <th:block th:replace="/layout/footer :: footer"/>
+    <!-- end Footer -->
+
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- End Page content -->
+  <!-- ============================================================== -->
+
+
+</div>
+<!-- END wrapper -->
+
+<!-- Right Sidebar -->
+<!-- /Right-bar -->
+
+<!-- Right bar overlay-->
+
+<th:block th:replace="/layout/script :: script"/>
+</body>
+</html>
